@@ -4,10 +4,7 @@ CineScope is a responsive movie discovery website built with HTML, CSS, and vani
 
 ## Live Demo
 
-**Live Website:** [View CineScope](https://your-username.github.io/CineScope_Project/)
-
-> Replace the link above with your actual GitHub Pages URL after deploying your project.
-
+**Live Website:** [View CineScope](https://nandinibandi.github.io/CineScope-Movie-Discovery/)
 ## Screenshots
 
 ### Dashboard
