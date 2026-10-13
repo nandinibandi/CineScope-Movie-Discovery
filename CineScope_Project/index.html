@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Nandini">
+  <meta name="description" content="Discover movies, explore genres, and find your next favorite film with CineScope.">
+  <title>CineScope | Movie Discovery</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/config.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="top-nav" aria-label="Main navigation">
+      <a class="brand" href="#">CineScope</a>
+      <form class="header-search" id="headerSearchForm" role="search">
+        <label class="visually-hidden" for="searchbox">Search movie titles</label>
+        <input type="search" id="searchbox" placeholder="Movie title...">
+        <button type="submit" aria-label="Search movies">Search</button>
+      </form>
+    </nav>
+  </header>
+
+  <main>
+    <section class="advanced-search" aria-labelledby="search-heading">
+      <h1 id="search-heading">Discover your next movie</h1>
+      <label for="advancedSearchbox">Movie title</label>
+      <input type="search" id="advancedSearchbox" placeholder="Type a movie title...">
+
+      <div class="filter-row">
+        <div class="filter-group">
+          <label for="qualityFilter">Quality</label>
+          <select id="qualityFilter">
+            <option value="">Any quality</option>
+            <option value="1080p">1080p</option>
+            <option value="720p">720p</option>
+            <option value="480p">480p</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="genreFilter">Genre</label>
+          <select id="genreFilter">
+            <option value="">All genres</option>
+            <option value="28">Action</option>
+            <option value="35">Comedy</option>
+            <option value="27">Horror</option>
+            <option value="18">Drama</option>
+            <option value="10749">Romance</option>
+            <option value="16">Animation</option>
+            <option value="99">Documentary</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="ratingFilter">Minimum rating</label>
+          <select id="ratingFilter">
+            <option value="">Any rating</option>
+            <option value="7">7+</option>
+            <option value="8">8+</option>
+            <option value="9">9+</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="yearFilter">Release year</label>
+          <input type="number" id="yearFilter" min="1888" max="2100" placeholder="e.g. 2023">
+        </div>
+        <div class="filter-group">
+          <label for="languageFilter">Language</label>
+          <select id="languageFilter">
+            <option value="">All languages</option>
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="ja">Japanese</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="orderFilter">Sort by</label>
+          <select id="orderFilter">
+            <option value="popularity.desc">Popular</option>
+            <option value="release_date.desc">Newest release</option>
+            <option value="vote_average.desc">Top rated</option>
+          </select>
+        </div>
+      </div>
+      <div class="search-actions">
+        <button id="searchButton" type="button">Search movies</button>
+        <button id="resetButton" class="secondary-button" type="button">Reset filters</button>
+      </div>
+      <p class="note">Note: Quality is included as a visual filter in this demo; TMDB's movie discovery API does not provide a simple 480p/720p/1080p filter.</p>
+    </section>
+
+    <section id="mainSection" aria-live="polite" aria-label="Movie results">
+      <p class="status-message">Loading movies...</p>
+    </section>
+
+    <div id="movieModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-content">
+        <button class="close-button" id="closeModal" type="button" aria-label="Close movie details">&times;</button>
+        <div class="modal-body">
+          <div class="modal-left">
+            <img id="modalImage" class="modal-image" src="" alt="Movie poster">
+          </div>
+          <div class="modal-right">
+            <h2 id="modalTitle"></h2>
+            <p id="modalOverview"></p>
+            <p id="modalRating"></p>
+            <p id="modalReleaseDate"></p>
+            <div id="modalTrailerContainer">
+              <h3>Trailer</h3>
+              <iframe id="modalTrailer" title="Movie trailer" width="100%" height="300"
+                src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <p id="noTrailerMessage" hidden>No trailer available for this movie.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2>CineScope</h2>
+        <p>Discover movies, explore stories, and find your next favorite film.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Explore</h3>
+        <a href="#">Home</a>
+        <a href="#mainSection">Movies</a>
+        <a href="#advancedSearchbox">Search movies</a>
+      </div>
+      <div class="footer-info">
+        <h3>About</h3>
+        <p>A movie discovery platform powered by TMDB.</p>
+        <p>Built with HTML, CSS, and JavaScript.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CineScope. Movie data provided by TMDB.</p>
+      <p>Made with passion for movie lovers.</p>
+    </div>
+  </footer>
+</body>
+</html>
